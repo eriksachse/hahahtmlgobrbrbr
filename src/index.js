@@ -46,19 +46,15 @@ window.setInterval(function () {
     images[im].style.top = "calc(50% - 100px)";
     images[im].style.transform =
       "translateY(" +
-      Math.sin(im / 1.5 + degreeToRad(animationCycle * frequency)) *
-        pixelOffset +
+      Math.sin(im / 2 + degreeToRad(animationCycle * frequency)) * pixelOffset +
       "vh) translateX(" +
-      Math.cos(im / 1.5 + degreeToRad(animationCycle * frequency)) *
-        pixelOffset +
-      window.innerWidth +
+      Math.cos(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset +
       "vw)translateZ(" +
-      Math.tan(im / 2.4 + degreeToRad(animationCycle * frequency)) *
-        pixelOffset +
-      window.innerWidth +
+      Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset +
       "vw) rotateZ(" +
-      Math.cos(im / 1.1 + degreeToRad(animationCycle * frequency)) *
-        pixelOffset +
+      Math.cos(im + degreeToRad(animationCycle * frequency)) * pixelOffset +
+      "deg)  rotateY(" +
+      Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset +
       "deg) ";
     animationCycle++;
   }
@@ -94,3 +90,8 @@ function reveal() {
     }
   }
 }
+
+window.addEventListener("load", function () {
+  var loader = document.getElementsByClassName("loader")[0];
+  loader.classList.add("finished");
+});

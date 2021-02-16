@@ -236,7 +236,7 @@ window.setInterval(function () {
     // images[im].style.left = im * 12 + "px";
     images[im].style.left = "calc(50% - 100px)";
     images[im].style.top = "calc(50% - 100px)";
-    images[im].style.transform = "translateY(" + Math.sin(im / 1.5 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vh) translateX(" + Math.cos(im / 1.5 + degreeToRad(animationCycle * frequency)) * pixelOffset + window.innerWidth + "vw)translateZ(" + Math.tan(im / 2.4 + degreeToRad(animationCycle * frequency)) * pixelOffset + window.innerWidth + "vw) rotateZ(" + Math.cos(im / 1.1 + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg) ";
+    images[im].style.transform = "translateY(" + Math.sin(im / 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vh) translateX(" + Math.cos(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vw)translateZ(" + Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vw) rotateZ(" + Math.cos(im + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg)  rotateY(" + Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg) ";
     animationCycle++;
   }
 }, 10);
@@ -273,6 +273,11 @@ function reveal() {
     }
   }
 }
+
+window.addEventListener("load", function () {
+  var loader = document.getElementsByClassName("loader")[0];
+  loader.classList.add("finished");
+});
 },{"./styles.css":"src/styles.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -301,7 +306,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55580" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57058" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
