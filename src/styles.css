@@ -24,6 +24,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: linear-gradient(blue, cyan);
 }
 .info {
   position: fixed;
@@ -159,6 +160,48 @@ h2 {
 }
 .visible {
   transform: translateY(0vh);
+}
+
+#c_1 {
+  position: absolute;
+  animation: movy 44s linear infinite;
+  opacity: 0.6;
+}
+#c_2 {
+  position: absolute;
+  animation: movy2 52s linear infinite;
+}
+#c_3 {
+  position: absolute;
+  animation: movy3 58s linear infinite;
+  animation-delay: 15s;
+}
+#c_4 {
+  position: absolute;
+}
+@keyframes movy {
+  from {
+    transform: translateX(200%) translateY(50%) scale(2);
+  }
+  to {
+    transform: translateX(-200%) translateY(50%) scale(2);
+  }
+}
+@keyframes movy2 {
+  from {
+    transform: translateX(100%) translateY(20%) scale(1);
+  }
+  to {
+    transform: translateX(-100%) translateY(20%) scale(1);
+  }
+}
+@keyframes movy3 {
+  from {
+    transform: translateX(140%) translateY(20%) scale(1.2);
+  }
+  to {
+    transform: translateX(-140%) translateY(20%) scale(1.2);
+  }
 }
 
 @media only screen and (max-width: 600px) {
