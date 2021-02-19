@@ -27,7 +27,6 @@ var animationCycle = 1;
 var frequency = 0.05;
 var pixelOffset = 28;
 main.addEventListener("wheel", function (e) {
-  console.log(e.deltaY);
   animationCycle += e.deltaY;
 });
 window.setInterval(function () {
@@ -55,14 +54,11 @@ console.log(names);
 for (var imh = 0; imh < images.length; imh++) {
   images[imh].addEventListener("mouseenter", function () {
     var id = this.id;
-    console.log(id);
-    console.log(names[id]);
     names[id].classList.add("name-active");
   });
   images[imh].addEventListener("mouseleave", function () {
     var id = this.id;
     // name.classList.remove("name-active");
-    console.log("leave", names[id].classList);
     names[id].classList.remove("name-active");
   });
 }
@@ -70,7 +66,6 @@ window.addEventListener("mousemove", function (e) {
   for (var nam = 0; nam < names.length; nam++) {
     var length = names[nam].clientWidth;
     var height = names[nam].clientHeight;
-    console.log(length);
     names[nam].style.top = e.clientY - height - 12 + "px";
     names[nam].style.left = e.clientX - length / 2 + "px";
   }
