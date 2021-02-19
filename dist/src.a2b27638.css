@@ -195,6 +195,26 @@ p:first-child {
   /* right: 12px; */
   opacity: 1;
 }
+#sun {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(50%, -50%);
+  width: 100vw;
+  animation: blur 5s ease infinite;
+  pointer-events: none;
+}
+@keyframes blur {
+  0% {
+    opacity: 80%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 80%;
+  }
+}
 #vid {
   position: relative;
   object-fit: cover;
