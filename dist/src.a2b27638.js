@@ -197,19 +197,12 @@ require("./styles.css");
 /* dirty js goes in here */
 
 /* --- hello visitor --- */
-var editableStyle = document.querySelector(".info-content");
-var text = editableStyle.innerHTML;
-var position = 0;
-var currentText = "";
 var interval = null;
-editableStyle.innerHTML = "";
 var infoButton = document.getElementById("info-title");
 var infoContent = document.getElementsByClassName("info-content")[0];
-var clicked = false;
 infoButton.addEventListener("click", function () {
   infoContent.classList.toggle("visible");
   clearInterval(interval);
-  interval = setInterval(reveal, 30);
 });
 var main = document.querySelector("main");
 console.log(main);
@@ -236,7 +229,7 @@ window.setInterval(function () {
     // images[im].style.left = im * 12 + "px";
     images[im].style.left = "calc(50% - 100px)";
     images[im].style.top = "calc(50% - 100px)";
-    images[im].style.transform = "translateY(" + Math.sin(im / 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vh) translateX(" + Math.cos(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vw)translateZ(" + Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vw) rotateZ(" + Math.cos(im + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg)  rotateY(" + Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg) ";
+    images[im].style.transform = "translateY(" + Math.sin(im / 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vh) translateX(" + Math.cos(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vw)translateZ(" + Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "vw) rotateZ(" + Math.cos(im + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg) rotateY(" + Math.tan(im * 2 + degreeToRad(animationCycle * frequency)) * pixelOffset + "deg) ";
     animationCycle++;
   }
 }, 10);
@@ -257,21 +250,6 @@ for (var imh = 0; imh < images.length; imh++) {
     console.log("leave", names[id].classList);
     names[id].classList.remove("name-active");
   });
-}
-
-function reveal() {
-  if (!clicked) {
-    currentText = text.substring(0, position);
-    editableStyle.innerHTML = currentText;
-    editableStyle.scrollTop = editableStyle.scrollHeight;
-    position += 1;
-
-    if (position >= text.length) {
-      clearInterval(interval);
-      clicked = true;
-      localStorage.setItem("animationShown", true);
-    }
-  }
 }
 
 window.addEventListener("load", function () {
@@ -306,7 +284,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57585" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54657" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
