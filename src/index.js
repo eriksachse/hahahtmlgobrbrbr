@@ -26,15 +26,12 @@ function degreeToRad(angle) {
 var animationCycle = 1;
 var frequency = 0.05;
 var pixelOffset = 28;
-window.addEventListener("wheel", function (e) {
+main.addEventListener("wheel", function (e) {
   console.log(e.deltaY);
   animationCycle += e.deltaY;
 });
 window.setInterval(function () {
   for (var im = 0; im < images.length; im++) {
-    // images[im].addEventListener("mouseenter", function () {});
-    // console.log(images[im]);
-    // images[im].style.left = im * 12 + "px";
     images[im].style.left = "calc(50% - 100px)";
     images[im].style.top = "calc(50% - 100px)";
     images[im].style.transform =
@@ -69,7 +66,15 @@ for (var imh = 0; imh < images.length; imh++) {
     names[id].classList.remove("name-active");
   });
 }
-
+window.addEventListener("mousemove", function (e) {
+  for (var nam = 0; nam < names.length; nam++) {
+    var length = names[nam].clientWidth;
+    var height = names[nam].clientHeight;
+    console.log(length);
+    names[nam].style.top = e.clientY - height - 12 + "px";
+    names[nam].style.left = e.clientX - length / 2 + "px";
+  }
+});
 window.addEventListener("load", function () {
   var loader = document.getElementsByClassName("loader")[0];
   loader.classList.add("finished");
