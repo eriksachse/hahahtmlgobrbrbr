@@ -22,6 +22,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 24px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .info {
   position: fixed;
@@ -156,10 +159,20 @@ h2 {
   margin: 12px 104px;
 }
 .visible {
-  overflow: scroll;
   transform: translateY(0vh);
 }
 
+@media only screen and (max-width: 600px) {
+  .info-content {
+    margin: 100px 12px;
+  }
+  .loader {
+    display: none;
+  }
+  #vid-rap {
+    display: none;
+  }
+}
 .images {
   /* margin-top: 50%; */
   /* display: grid;
@@ -200,12 +213,14 @@ p:first-child {
   position: absolute;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.6s ease, letter-spacing 0.6s ease;
+  transform: scale(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
   z-index: 12;
 }
 .name-active {
   /* right: 12px; */
   opacity: 1;
+  transform: scale(1);
   /* transform: translate(50%, -50%); */
 }
 #sun {
