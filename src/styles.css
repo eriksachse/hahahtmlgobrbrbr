@@ -37,7 +37,7 @@ h1 {
   text-shadow: 0px 0px 10px blue;
   color: white;
   width: 60vw;
-  line-height: 32vh;
+  line-height: 22vh;
   height: 100vh;
   margin: 0;
   z-index: 22;
@@ -148,7 +148,7 @@ h2 {
   transition: transform 0.5s linear;
   /* padding-top: 120px; */
   height: 400px;
-  width: 500px;
+  max-width: 500px;
   position: absolute;
   z-index: 11;
   overflow: scroll;
@@ -200,14 +200,12 @@ p:first-child {
   position: absolute;
   pointer-events: none;
   opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, letter-spacing 0.6s ease;
   z-index: 12;
 }
 .name-active {
   /* right: 12px; */
   opacity: 1;
-  transform: scale(1);
   /* transform: translate(50%, -50%); */
 }
 #sun {
