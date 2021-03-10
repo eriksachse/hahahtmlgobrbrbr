@@ -13,7 +13,6 @@ infoButton.addEventListener("click", function () {
 });
 
 var main = document.querySelector("main");
-console.log(main);
 main.addEventListener("click", function () {
   infoContent.classList.remove("visible");
 });
@@ -58,7 +57,6 @@ for (var imh = 0; imh < images.length; imh++) {
   });
   images[imh].addEventListener("mouseleave", function () {
     var id = this.id;
-    // name.classList.remove("name-active");
     names[id].classList.remove("name-active");
   });
 }
@@ -70,7 +68,7 @@ window.addEventListener("mousemove", function (e) {
     names[nam].style.left = e.clientX - length / 2 + "px";
   }
 });
+var loader = document.getElementsByClassName("loader")[0];
 window.addEventListener("load", function () {
-  var loader = document.getElementsByClassName("loader")[0];
   loader.classList.add("finished");
 });
