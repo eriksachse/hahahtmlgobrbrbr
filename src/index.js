@@ -69,6 +69,5 @@ window.addEventListener("mousemove", function (e) {
   }
 });
 var loader = document.getElementsByClassName("loader")[0];
-window.addEventListener("load", function () {
-  loader.classList.add("finished");
-});
+loader.classList.add("finished");
+window.addEventListener("load", function () {});
